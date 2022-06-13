@@ -1,3 +1,8 @@
+#==============×==============#
+      Created by: Alfa-Ex
+ Dockerfile for: Ayiin-Userbot
+#=========× AyiinXd ×=========#
+
 FROM ayiinxd/ayiin-userbot:buster
 
 RUN git clone -b Ayiin-Userbot https://github.com/AyiinXd/Ayiin-Userbot /home/ayiinuserbot/ \
@@ -7,5 +12,7 @@ RUN git clone -b Ayiin-Userbot https://github.com/AyiinXd/Ayiin-Userbot /home/ay
 COPY ./sample_config.env ./config.env* /home/ayiinuserbot/
 
 WORKDIR /home/ayiinuserbot/
+
+RUN pip install -r requirements.txt
 
 CMD ["bash","start"]
